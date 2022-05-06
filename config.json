@@ -15,7 +15,7 @@
     "licenseName": "MIT",
     "licenseUrl": "https://github.com/finbourne/scheduler-sdk-java-preview/blob/master/LICENSE.md",
     "hideGenerationTimestamp": true,
-    "metaRequestIdHeader": "website-meta-requestid",
+    "metaRequestIdHeader": "scheduler-meta-requestid",
     "scmConnection": "git@github.com:finbourne/scheduler-sdk-java-preview.git",
     "scmDeveloperConnection": "git@github.com:finbourne/scheduler-sdk-java-preview.git",
     "scmUrl": "https://github.com/finbourne/scheduler-sdk-java-preview/"
