@@ -6,7 +6,7 @@ info:
     url: https://www.finbourne.com
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: FINBOURNE Scheduler API
-  version: 0.0.520
+  version: 0.0.615
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -926,6 +926,7 @@ paths:
                     scope: JobScope
                     code: JobCode
                   name: Job name
+                  initialisedDate: 2019-12-10T23:59:50.0000000+00:00
                   startDate: 2019-12-11T00:00:00.0000000+00:00
                   endDate: 2019-12-11T00:06:12.0000000+00:00
                   arguments:
@@ -993,6 +994,7 @@ paths:
                   scope: JobScope
                   code: JobCode
                 name: Job name
+                initialisedDate: 2019-12-11T00:00:10.0000000+00:00
                 startDate: 2019-12-11T00:00:00.0000000+00:00
                 endDate: 2019-12-11T00:06:12.0000000+00:00
                 arguments:
@@ -2982,14 +2984,16 @@ components:
           $ref: '#/components/schemas/ResourceId'
         name:
           description: Name of the job
-          maxLength: 50
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         author:
           description: Author of the job
-          maxLength: 50
+          maxLength: 512
           minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         dateCreated:
           description: Date when job was created. Defaults to now.
@@ -2997,8 +3001,9 @@ components:
           type: string
         description:
           description: Description of this job
-          maxLength: 250
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         imageName:
           description: The name of the Docker image that contains this job
@@ -3110,25 +3115,29 @@ components:
           $ref: '#/components/schemas/ResourceId'
         name:
           description: A display name for this Schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         description:
           description: A description of the Schedule
-          maxLength: 256
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         author:
           description: Name of the author of this schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         owner:
           description: Name of owner of this schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         arguments:
           additionalProperties:
@@ -3526,6 +3535,7 @@ components:
         jobId:
           code: code
           scope: scope
+        initialisedDate: 2000-01-23T04:56:07.000+00:00
         environmentVariables:
           key: environmentVariables
         jobResult: jobResult
@@ -3550,9 +3560,12 @@ components:
           description: Name of the job
           nullable: true
           type: string
+        initialisedDate:
+          description: The date when the job was initialised
+          format: date-time
+          type: string
         startDate:
-          description: "Start date of the job\r\nDefaults to null if the job has not\
-            \ started yet ( is in a pending status )"
+          description: The date when the job started running in Scheduler
           format: date-time
           nullable: true
           type: string
@@ -3624,6 +3637,7 @@ components:
         jobId:
           code: code
           scope: scope
+        initialisedDate: 2000-01-23T04:56:07.000+00:00
         environmentVariables:
           key: environmentVariables
         jobResult: jobResult
@@ -3652,9 +3666,12 @@ components:
           description: Name of the job
           nullable: true
           type: string
+        initialisedDate:
+          description: The date when the job was initialised
+          format: date-time
+          type: string
         startDate:
-          description: "Start date of the job\r\nDefaults to null if the job has not\
-            \ started yet ( is in a pending status )"
+          description: The date when the job started running in Scheduler
           format: date-time
           nullable: true
           type: string
@@ -3952,13 +3969,15 @@ components:
       properties:
         scope:
           description: Scope of the resource
-          maxLength: 50
+          maxLength: 64
           minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
         code:
           description: Code of the resource
-          maxLength: 50
+          maxLength: 64
           minLength: 1
+          pattern: ^[a-zA-Z0-9\-_]+$
           type: string
       required:
       - code
@@ -4457,6 +4476,7 @@ components:
           jobId:
             code: code
             scope: scope
+          initialisedDate: 2000-01-23T04:56:07.000+00:00
           environmentVariables:
             key: environmentVariables
           jobResult: jobResult
@@ -4478,6 +4498,7 @@ components:
           jobId:
             code: code
             scope: scope
+          initialisedDate: 2000-01-23T04:56:07.000+00:00
           environmentVariables:
             key: environmentVariables
           jobResult: jobResult
@@ -5123,19 +5144,22 @@ components:
       properties:
         name:
           description: Name of the job
-          maxLength: 50
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         author:
           description: Author of the job
-          maxLength: 50
-          minLength: 1
+          maxLength: 512
+          minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         description:
           description: Description of this job
-          maxLength: 250
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         imageName:
           description: The name of the Docker image that contains this job
@@ -5241,25 +5265,29 @@ components:
           $ref: '#/components/schemas/ResourceId'
         name:
           description: The updated name of the schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         description:
           description: The updated description of the schedule
-          maxLength: 256
+          maxLength: 512
           minLength: 1
+          pattern: ^[\s\S]*$
           type: string
         author:
           description: The updated author of the schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         owner:
           description: The update owner of the schedule
-          maxLength: 50
+          maxLength: 512
           minLength: 0
           nullable: true
+          pattern: ^[\s\S]*$
           type: string
         arguments:
           additionalProperties:
