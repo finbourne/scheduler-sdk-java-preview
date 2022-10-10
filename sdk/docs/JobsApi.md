@@ -180,7 +180,7 @@ public class Example {
     String page = "page_example"; // String | The pagination token to use to continue listing instruments from a previous call to list instruments.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
     List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
     Integer start = 56; // Integer | This field is obsolete, the value of this field would not be considered.
-    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified
+    Integer limit = 56; // Integer | When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified. Maximum is 5000.
     String filter = "filter_example"; // String | Expression to filter the result set.
     try {
       ResourceListOfJobHistory result = apiInstance.getHistory(page, sortBy, start, limit, filter);
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
  **page** | **String**| The pagination token to use to continue listing instruments from a previous call to list instruments.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
  **start** | **Integer**| This field is obsolete, the value of this field would not be considered. | [optional]
- **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified | [optional]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified. Maximum is 5000. | [optional]
  **filter** | **String**| Expression to filter the result set. | [optional]
 
 ### Return type
@@ -458,7 +458,7 @@ public class Example {
     String page = "page_example"; // String | The pagination token to use to continue listing instruments from a previous call to list instruments.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided.
     List<String> sortBy = Arrays.asList(); // List<String> | Order the results by these fields. Use use the '-' sign to denote descending order e.g. -MyFieldName.
     Integer start = 56; // Integer | When paginating, skip this number of results.
-    Integer limit = 2000; // Integer | When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified
+    Integer limit = 2000; // Integer | When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified. Maximum is 5000.
     String filter = "filter_example"; // String | Expression to filter the result set.
     try {
       ResourceListOfJobDefinition result = apiInstance.listJobs(page, sortBy, start, limit, filter);
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
  **page** | **String**| The pagination token to use to continue listing instruments from a previous call to list instruments.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. | [optional]
  **sortBy** | [**List&lt;String&gt;**](String.md)| Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order e.g. -MyFieldName. | [optional]
  **start** | **Integer**| When paginating, skip this number of results. | [optional]
- **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified | [optional] [default to 2000]
+ **limit** | **Integer**| When paginating, limit the number of returned results to this many. Defaults to 2000 if not specified. Maximum is 5000. | [optional] [default to 2000]
  **filter** | **String**| Expression to filter the result set. | [optional]
 
 ### Return type
