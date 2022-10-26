@@ -6,7 +6,7 @@ info:
     url: https://www.finbourne.com
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: FINBOURNE Scheduler API
-  version: 0.0.641
+  version: 0.0.646
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -3085,6 +3085,7 @@ components:
             pollPeriod: 6920
           timeTrigger:
             expression: expression
+            timeZone: timeZone
           combinedTrigger:
             bucket: bucket
             file: file
@@ -4649,6 +4650,7 @@ components:
               pollPeriod: 6920
             timeTrigger:
               expression: expression
+              timeZone: timeZone
             combinedTrigger:
               bucket: bucket
               file: file
@@ -4688,6 +4690,7 @@ components:
               pollPeriod: 6920
             timeTrigger:
               expression: expression
+              timeZone: timeZone
             combinedTrigger:
               bucket: bucket
               file: file
@@ -4887,6 +4890,7 @@ components:
             pollPeriod: 6920
           timeTrigger:
             expression: expression
+            timeZone: timeZone
           combinedTrigger:
             bucket: bucket
             file: file
@@ -5071,9 +5075,17 @@ components:
       description: Time-based trigger
       example:
         expression: expression
+        timeZone: timeZone
       properties:
         expression:
           description: Cron expression
+          maxLength: 100
+          minLength: 1
+          nullable: true
+          type: string
+        timeZone:
+          description: Time zone of the Cron expression. If not provided, defaults
+            to UTC
           maxLength: 100
           minLength: 1
           nullable: true
@@ -5090,6 +5102,7 @@ components:
           pollPeriod: 6920
         timeTrigger:
           expression: expression
+          timeZone: timeZone
         combinedTrigger:
           bucket: bucket
           file: file
@@ -5240,6 +5253,7 @@ components:
             pollPeriod: 6920
           timeTrigger:
             expression: expression
+            timeZone: timeZone
           combinedTrigger:
             bucket: bucket
             file: file
