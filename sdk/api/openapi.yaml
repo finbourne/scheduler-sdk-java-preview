@@ -6,7 +6,7 @@ info:
     url: https://www.finbourne.com
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: FINBOURNE Scheduler API
-  version: 0.0.655
+  version: 0.0.657
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -1685,10 +1685,9 @@ paths:
               arguments:
                 argument: Argument value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1717,10 +1716,9 @@ paths:
               arguments:
                 argument: Argument value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1749,10 +1747,9 @@ paths:
               arguments:
                 argument: Argument value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1781,10 +1778,9 @@ paths:
               arguments:
                 argument: Argument value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1816,6 +1812,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -1843,6 +1843,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -1870,6 +1874,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -1998,6 +2006,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2025,6 +2037,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2052,6 +2068,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2126,10 +2146,9 @@ paths:
               arguments:
                 updatedArgument: Updated value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -2155,10 +2174,9 @@ paths:
               arguments:
                 updatedArgument: Updated value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -2184,10 +2202,9 @@ paths:
               arguments:
                 updatedArgument: Updated value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -2213,10 +2230,9 @@ paths:
               arguments:
                 updatedArgument: Updated value
               trigger:
-                bucketWatcherTrigger:
-                  file: FileName
-                  pollPeriod: 5
-                  bucket: fbn-ci-schedulertest
+                timeTrigger:
+                  expression: 0 0 5 ? * 3
+                  timeZone: UTC
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -2249,6 +2265,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2276,6 +2296,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2303,6 +2327,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2481,6 +2509,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2508,6 +2540,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2535,6 +2571,10 @@ paths:
                 owner: Schedule owner
                 arguments:
                   argument: Argument value
+                trigger:
+                  timeTrigger:
+                    expression: 0 0 5 ? * 3
+                    timeZone: UTC
                 notifications:
                 - fireOn: Completed
                   transport: Email
@@ -2851,95 +2891,6 @@ components:
       - order
       - passedAs
       type: object
-    BucketWatcherTrigger:
-      additionalProperties: false
-      description: Trigger based on activity from an S3 bucket
-      example:
-        bucket: bucket
-        file: file
-        pollPeriod: 6920
-      properties:
-        file:
-          description: "The file name or partial path of the file that will trigger\
-            \ the job\r\nE.G: `fileName` or `folder1/folder2/someFileName`"
-          maxLength: 256
-          minLength: 1
-          nullable: true
-          type: string
-        pollPeriod:
-          description: "The frequency, in seconds, at which to poll the S3 bucket\
-            \ for the file.\r\nDefaults to 5."
-          format: int32
-          maximum: 86400
-          minimum: 1
-          type: integer
-        bucket:
-          description: The S3 bucket where to watch for the trigger file
-          nullable: true
-          type: string
-      type: object
-    CombinedTrigger:
-      additionalProperties: false
-      description: "A file based triggered constrained by a time window\r\nSupports\
-        \ the ability to specify multiple trigger files,\r\nto choose whether a schedule\
-        \ is triggered for every file or first file,\r\nhas the option to trigger\
-        \ the schedule at the end of the time window, if any or no files arrived"
-      example:
-        bucket: bucket
-        file: file
-        pollPeriod: 52077
-        triggerEveryFile: true
-        startTime: startTime
-        endOfTimeWindowOption: endOfTimeWindowOption
-        endTime: endTime
-      properties:
-        startTime:
-          description: "The start of the time window when a file can arrive to trigger\
-            \ the schedule\r\nCannot exceed 24 hours"
-          format: date-span
-          type: string
-        endTime:
-          description: "The end of the time window when a file can arrive to trigger\
-            \ the schedule\r\nMust be after the Finbourne.Scheduler.WebApi.Dtos.CombinedTrigger.StartTime\
-            \ and cannot exceed 24 hours"
-          format: date-span
-          type: string
-        file:
-          description: "The file name or partial path of the file that will trigger\
-            \ the job\r\nE.G: `fileName` or `folder1/folder2/someFileName`"
-          maxLength: 256
-          minLength: 1
-          type: string
-        pollPeriod:
-          description: "The frequency, in seconds, at which to poll the S3 bucket\
-            \ for the file.\r\nMust be lower than the difference in seconds between\
-            \ Finbourne.Scheduler.WebApi.Dtos.CombinedTrigger.EndTime and Finbourne.Scheduler.WebApi.Dtos.CombinedTrigger.StartTime\r\
-            \nDefaults to 5."
-          format: int32
-          maximum: 86400
-          minimum: 1
-          type: integer
-        bucket:
-          description: The S3 bucket where to watch for the trigger file
-          type: string
-        triggerEveryFile:
-          description: Specify whether to trigger every time the file is updated
-          type: boolean
-        endOfTimeWindowOption:
-          description: "Specifies the behaviour of the trigger when the time window\
-            \ ends\r\nAvailable options are \"Always\", \"NoFile\", \"FileReceived\"\
-            , \"Never\"\r\nFinbourne.Scheduler.WebApi.Dtos.CombinedTrigger.EndOfTimeWindowOption"
-          type: string
-        daysAvailable:
-          $ref: '#/components/schemas/DaysOfWeek'
-      required:
-      - bucket
-      - daysAvailable
-      - endOfTimeWindowOption
-      - endTime
-      - file
-      - startTime
-      type: object
     CreateJobRequest:
       additionalProperties: false
       description: Definition of a job
@@ -3079,21 +3030,9 @@ components:
         arguments:
           key: arguments
         trigger:
-          bucketWatcherTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 6920
           timeTrigger:
             expression: expression
             timeZone: timeZone
-          combinedTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 52077
-            triggerEveryFile: true
-            startTime: startTime
-            endOfTimeWindowOption: endOfTimeWindowOption
-            endTime: endTime
         scheduleId:
           code: code
           scope: scope
@@ -3165,17 +3104,6 @@ components:
       - notifications
       - scheduleId
       type: object
-    DaysOfWeek:
-      description: Days of the week
-      enum:
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
-      - Sunday
-      type: string
     IdentifierPartSchema:
       additionalProperties: false
       example:
@@ -4644,21 +4572,9 @@ components:
           arguments:
             key: arguments
           trigger:
-            bucketWatcherTrigger:
-              bucket: bucket
-              file: file
-              pollPeriod: 6920
             timeTrigger:
               expression: expression
               timeZone: timeZone
-            combinedTrigger:
-              bucket: bucket
-              file: file
-              pollPeriod: 52077
-              triggerEveryFile: true
-              startTime: startTime
-              endOfTimeWindowOption: endOfTimeWindowOption
-              endTime: endTime
           notifications:
           - destination:
             - destination
@@ -4684,21 +4600,9 @@ components:
           arguments:
             key: arguments
           trigger:
-            bucketWatcherTrigger:
-              bucket: bucket
-              file: file
-              pollPeriod: 6920
             timeTrigger:
               expression: expression
               timeZone: timeZone
-            combinedTrigger:
-              bucket: bucket
-              file: file
-              pollPeriod: 52077
-              triggerEveryFile: true
-              startTime: startTime
-              endOfTimeWindowOption: endOfTimeWindowOption
-              endTime: endTime
           notifications:
           - destination:
             - destination
@@ -4884,21 +4788,9 @@ components:
         arguments:
           key: arguments
         trigger:
-          bucketWatcherTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 6920
           timeTrigger:
             expression: expression
             timeZone: timeZone
-          combinedTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 52077
-            triggerEveryFile: true
-            startTime: startTime
-            endOfTimeWindowOption: endOfTimeWindowOption
-            endTime: endTime
         notifications:
         - destination:
           - destination
@@ -5096,28 +4988,12 @@ components:
       description: "Holds different kinds of triggers\r\nA schedule may only have\
         \ one type of trigger"
       example:
-        bucketWatcherTrigger:
-          bucket: bucket
-          file: file
-          pollPeriod: 6920
         timeTrigger:
           expression: expression
           timeZone: timeZone
-        combinedTrigger:
-          bucket: bucket
-          file: file
-          pollPeriod: 52077
-          triggerEveryFile: true
-          startTime: startTime
-          endOfTimeWindowOption: endOfTimeWindowOption
-          endTime: endTime
       properties:
-        bucketWatcherTrigger:
-          $ref: '#/components/schemas/BucketWatcherTrigger'
         timeTrigger:
           $ref: '#/components/schemas/TimeTrigger'
-        combinedTrigger:
-          $ref: '#/components/schemas/CombinedTrigger'
       type: object
     UpdateJobRequest:
       additionalProperties: false
@@ -5247,21 +5123,9 @@ components:
         arguments:
           key: arguments
         trigger:
-          bucketWatcherTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 6920
           timeTrigger:
             expression: expression
             timeZone: timeZone
-          combinedTrigger:
-            bucket: bucket
-            file: file
-            pollPeriod: 52077
-            triggerEveryFile: true
-            startTime: startTime
-            endOfTimeWindowOption: endOfTimeWindowOption
-            endTime: endTime
         notifications:
         - destination:
           - destination
