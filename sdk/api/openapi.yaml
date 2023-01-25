@@ -6,7 +6,7 @@ info:
     url: https://www.finbourne.com
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: FINBOURNE Scheduler API
-  version: 0.0.740
+  version: 0.0.744
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -26,7 +26,8 @@ tags:
 paths:
   /api/images:
     post:
-      description: Every image must have at least one tag
+      description: 'Every image must have at least one tag. Note: your image will
+        not be available until the returned Docker commands are executed.'
       operationId: UploadImage
       requestBody:
         content:
@@ -94,14 +95,8 @@ paths:
         name: page
         required: false
         schema:
-          description: "The pagination token to use to continue listing images from\
-            \ a previous call to list images.\r\n            This value is returned\
-            \ from the previous call. If a pagination token is provided the sortBy\
-            \ and filter fields\r\n            must not have changed since the original\
-            \ request. Also, if set, a start value cannot be provided."
           maxLength: 500
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
@@ -112,11 +107,8 @@ paths:
         name: sortBy
         required: false
         schema:
-          description: Order the results by these fields. Use use the '-' sign to
-            denote descending order e.g. -MyFieldName.
           items:
             type: string
-          nullable: true
           type: array
         style: form
         x-nullable: true
@@ -126,11 +118,9 @@ paths:
         name: start
         required: false
         schema:
-          description: When paginating, skip this number of results.
           format: int32
           maximum: 5000
           minimum: 0
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -142,12 +132,9 @@ paths:
         required: false
         schema:
           default: 2000
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 2000 if not specified. Maximum is 5000.
           format: int32
           maximum: 5000
           minimum: 1
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -157,10 +144,8 @@ paths:
         name: filter
         required: false
         schema:
-          description: Expression to filter the result set.
           maxLength: 1024
           minLength: 0
-          nullable: true
           type: string
         style: form
       responses:
@@ -217,8 +202,6 @@ paths:
         name: name
         required: true
         schema:
-          description: The name of the Repository
-          nullable: true
           type: string
         style: simple
       - description: "The pagination token to use to continue listing images from\
@@ -231,14 +214,8 @@ paths:
         name: page
         required: false
         schema:
-          description: "The pagination token to use to continue listing images from\
-            \ a previous call to list images.\r\n            This value is returned\
-            \ from the previous call. If a pagination token is provided the sortBy\
-            \ and filter fields\r\n            must not have changed since the original\
-            \ request. Also, if set, a start value cannot be provided."
           maxLength: 500
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
@@ -249,11 +226,8 @@ paths:
         name: sortBy
         required: false
         schema:
-          description: Order the results by these fields. Use use the '-' sign to
-            denote descending order e.g. -MyFieldName.
           items:
             type: string
-          nullable: true
           type: array
         style: form
         x-nullable: true
@@ -263,11 +237,9 @@ paths:
         name: start
         required: false
         schema:
-          description: When paginating, skip this number of results.
           format: int32
           maximum: 5000
           minimum: 0
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -279,12 +251,9 @@ paths:
         required: false
         schema:
           default: 2000
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 2000 if not specified. Maximum is 5000.
           format: int32
           maximum: 5000
           minimum: 1
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -294,10 +263,8 @@ paths:
         name: filter
         required: false
         schema:
-          description: Expression to filter the result set.
           maxLength: 1024
           minLength: 0
-          nullable: true
           type: string
         style: form
       responses:
@@ -364,7 +331,6 @@ paths:
         name: name
         required: true
         schema:
-          description: The name and tag of the image of the image. Format "ExampleImageName:latest,0.1,0.2"
           maxLength: 256
           minLength: 1
           pattern: ^[a-z\d]+((([.]{1}|[_]{1,2}|[-])+)([a-z\d]+))*:[a-z\d]+((([.]{1}|[_]{1,2}|[-])+)([a-z\d]+))*$
@@ -411,7 +377,6 @@ paths:
         name: name
         required: true
         schema:
-          description: The name and tag of the image of the image. Format "ExampleImageName:latest"
           maxLength: 256
           minLength: 1
           pattern: ^[a-z\d]+((([.]{1}|[_]{1,2}|[-])+)([a-z\d]+))*:[a-z\d]+((([.]{1}|[_]{1,2}|[-])+)([a-z\d]+))*$
@@ -494,7 +459,6 @@ paths:
         name: name
         required: true
         schema:
-          description: The name and tag of the image of the image. Format "ExampleImageName:latest"
           type: string
         style: simple
       responses:
@@ -538,14 +502,8 @@ paths:
         name: page
         required: false
         schema:
-          description: "The pagination token to use to continue listing instruments\
-            \ from a previous call to list instruments.\r\n            This value\
-            \ is returned from the previous call. If a pagination token is provided\
-            \ the sortBy and filter fields\r\n            must not have changed since\
-            \ the original request. Also, if set, a start value cannot be provided."
           maxLength: 500
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
@@ -556,11 +514,8 @@ paths:
         name: sortBy
         required: false
         schema:
-          description: Order the results by these fields. Use use the '-' sign to
-            denote descending order e.g. -MyFieldName.
           items:
             type: string
-          nullable: true
           type: array
         style: form
         x-nullable: true
@@ -570,11 +525,9 @@ paths:
         name: start
         required: false
         schema:
-          description: When paginating, skip this number of results.
           format: int32
           maximum: 5000
           minimum: 0
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -586,12 +539,9 @@ paths:
         required: false
         schema:
           default: 2000
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 2000 if not specified. Maximum is 5000.
           format: int32
           maximum: 5000
           minimum: 1
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -601,10 +551,8 @@ paths:
         name: filter
         required: false
         schema:
-          description: Expression to filter the result set.
           maxLength: 1024
           minLength: 0
-          nullable: true
           type: string
         style: form
       responses:
@@ -655,7 +603,7 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                secreT1:
+                SECRET1:
                   dataType: SecureString
                   required: true
                   description: Database credentials
@@ -689,7 +637,7 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                secreT1:
+                SECRET1:
                   dataType: SecureString
                   required: true
                   description: Database credentials
@@ -723,7 +671,7 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                secreT1:
+                SECRET1:
                   dataType: SecureString
                   required: true
                   description: Database credentials
@@ -757,7 +705,7 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                secreT1:
+                SECRET1:
                   dataType: SecureString
                   required: true
                   description: Database credentials
@@ -795,7 +743,7 @@ paths:
                 minMemory: 0.5Mi
                 maxMemory: 500Mi
                 argumentDefinitions:
-                  secreT1:
+                  SECRET1:
                     dataType: SecureString
                     required: true
                     description: Database credentials
@@ -846,14 +794,8 @@ paths:
         name: page
         required: false
         schema:
-          description: "The pagination token to use to continue listing instruments\
-            \ from a previous call to list instruments.\r\n            This value\
-            \ is returned from the previous call. If a pagination token is provided\
-            \ the sortBy and filter fields\r\n            must not have changed since\
-            \ the original request. Also, if set, a start value cannot be provided."
           maxLength: 500
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
@@ -864,11 +806,8 @@ paths:
         name: sortBy
         required: false
         schema:
-          description: Order the results by these fields. Use use the '-' sign to
-            denote descending order e.g. -MyFieldName.
           items:
             type: string
-          nullable: true
           type: array
         style: form
         x-nullable: true
@@ -879,10 +818,7 @@ paths:
         name: start
         required: false
         schema:
-          description: This field is obsolete, the value of this field would not be
-            considered.
           format: int32
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -893,12 +829,9 @@ paths:
         name: limit
         required: false
         schema:
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 2000 if not specified. Maximum is 5000.
           format: int32
           maximum: 5000
           minimum: 1
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -908,10 +841,8 @@ paths:
         name: filter
         required: false
         schema:
-          description: Expression to filter the result set.
           maxLength: 16384
           minLength: 0
-          nullable: true
           pattern: ^[\s\S]*$
           type: string
         style: form
@@ -930,9 +861,9 @@ paths:
                   startDate: 2019-12-11T00:00:00.0000000+00:00
                   endDate: 2019-12-11T00:06:12.0000000+00:00
                   arguments:
-                    exchangeCode: XLON
+                    ExchangeCode: XLON
                   environmentVariables:
-                    secret1: '{secret:/Scheduler/Secrets/secret1}'
+                    Secret1: '{secret:/Scheduler/Secrets/secret1}'
                   jobStatus: Succeeded
                   jobResult: Data load
                   description: Data load
@@ -976,10 +907,8 @@ paths:
         name: runId
         required: true
         schema:
-          description: The unique ID of the run
           maxLength: 36
           minLength: 0
-          nullable: true
           pattern: ^[a-zA-Z0-9\-]+$
           type: string
         style: simple
@@ -998,9 +927,9 @@ paths:
                 startDate: 2019-12-11T00:00:00.0000000+00:00
                 endDate: 2019-12-11T00:06:12.0000000+00:00
                 arguments:
-                  exchangeCode: XLON
+                  ExchangeCode: XLON
                 environmentVariables:
-                  secret1: '{secret:/Scheduler/Secrets/secret1}'
+                  Secret1: '{secret:/Scheduler/Secrets/secret1}'
                 jobStatus: Succeeded
                 jobResult: Data load
                 description: Data load
@@ -1043,10 +972,8 @@ paths:
         name: runId
         required: true
         schema:
-          description: The RunId of the job run
           maxLength: 36
           minLength: 0
-          nullable: true
           pattern: ^[a-zA-Z0-9\-]+$
           type: string
         style: simple
@@ -1093,7 +1020,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: The scope of the job
           type: string
         style: simple
       - description: The code of the job
@@ -1102,7 +1028,6 @@ paths:
         name: code
         required: true
         schema:
-          description: The code of the job
           type: string
         style: simple
       responses:
@@ -1164,14 +1089,14 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                updatedSecret:
+                UpdatedSecret:
                   dataType: SecureString
                   required: true
                   description: Database credentials
                   order: 1
                   constraints: None
                   passedAs: EnvironmentVariable
-                updatedArgument:
+                UpdatedArgument:
                   dataType: String
                   required: true
                   description: Command line argument
@@ -1202,14 +1127,14 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                updatedSecret:
+                UpdatedSecret:
                   dataType: SecureString
                   required: true
                   description: Database credentials
                   order: 1
                   constraints: None
                   passedAs: EnvironmentVariable
-                updatedArgument:
+                UpdatedArgument:
                   dataType: String
                   required: true
                   description: Command line argument
@@ -1240,14 +1165,14 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                updatedSecret:
+                UpdatedSecret:
                   dataType: SecureString
                   required: true
                   description: Database credentials
                   order: 1
                   constraints: None
                   passedAs: EnvironmentVariable
-                updatedArgument:
+                UpdatedArgument:
                   dataType: String
                   required: true
                   description: Command line argument
@@ -1278,14 +1203,14 @@ paths:
               minMemory: 0.5Mi
               maxMemory: 500Mi
               argumentDefinitions:
-                updatedSecret:
+                UpdatedSecret:
                   dataType: SecureString
                   required: true
                   description: Database credentials
                   order: 1
                   constraints: None
                   passedAs: EnvironmentVariable
-                updatedArgument:
+                UpdatedArgument:
                   dataType: String
                   required: true
                   description: Command line argument
@@ -1323,7 +1248,7 @@ paths:
                 minMemory: 0.5Mi
                 maxMemory: 500Mi
                 argumentDefinitions:
-                  secreT1:
+                  SECRET1:
                     dataType: SecureString
                     required: true
                     description: Database credentials
@@ -1370,7 +1295,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: The scope of the job
           type: string
         style: simple
       - description: The code of the job
@@ -1379,7 +1303,6 @@ paths:
         name: code
         required: true
         schema:
-          description: The code of the job
           type: string
         style: simple
       requestBody:
@@ -1387,7 +1310,7 @@ paths:
           application/json-patch+json:
             example:
               arguments:
-                exchangeCode: XLON
+                ExchangeCode: XLON
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1398,7 +1321,7 @@ paths:
           application/json:
             example:
               arguments:
-                exchangeCode: XLON
+                ExchangeCode: XLON
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1409,7 +1332,7 @@ paths:
           text/json:
             example:
               arguments:
-                exchangeCode: XLON
+                ExchangeCode: XLON
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1420,7 +1343,7 @@ paths:
           application/*+json:
             example:
               arguments:
-                exchangeCode: XLON
+                ExchangeCode: XLON
               notifications:
               - fireOn: Completed
                 transport: Email
@@ -1443,7 +1366,7 @@ paths:
                 result: TestResult
               schema:
                 $ref: '#/components/schemas/StartJobResponse'
-          description: Success
+          description: Accepted
         "400":
           content:
             application/json:
@@ -1474,7 +1397,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: The scope of the job
           type: string
         style: simple
       - description: The code of the job
@@ -1483,7 +1405,6 @@ paths:
         name: code
         required: true
         schema:
-          description: The code of the job
           type: string
         style: simple
       responses:
@@ -1559,14 +1480,8 @@ paths:
         name: page
         required: false
         schema:
-          description: "The pagination token to use to continue listing instruments\
-            \ from a previous call to list instruments.\r\n            This value\
-            \ is returned from the previous call. If a pagination token is provided\
-            \ the sortBy and filter fields\r\n            must not have changed since\
-            \ the original request. Also, if set, a start value cannot be provided."
           maxLength: 500
           minLength: 1
-          nullable: true
           pattern: ^[a-zA-Z0-9\+/]*={0,3}$
           type: string
         style: form
@@ -1577,11 +1492,8 @@ paths:
         name: sortBy
         required: false
         schema:
-          description: Order the results by these fields. Use use the '-' sign to
-            denote descending order e.g. -MyFieldName.
           items:
             type: string
-          nullable: true
           type: array
         style: form
         x-nullable: true
@@ -1591,11 +1503,9 @@ paths:
         name: start
         required: false
         schema:
-          description: When paginating, skip this number of results.
           format: int32
           maximum: 5000
           minimum: 0
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -1607,12 +1517,9 @@ paths:
         required: false
         schema:
           default: 2000
-          description: When paginating, limit the number of returned results to this
-            many. Defaults to 2000 if not specified. Maximum is 5000.
           format: int32
           maximum: 5000
           minimum: 1
-          nullable: true
           type: integer
         style: form
         x-nullable: true
@@ -1622,10 +1529,8 @@ paths:
         name: filter
         required: false
         schema:
-          description: Expression to filter the result set.
           maxLength: 1024
           minLength: 0
-          nullable: true
           type: string
         style: form
       responses:
@@ -1683,7 +1588,7 @@ paths:
               author: Schedule author
               owner: Schedule owner
               arguments:
-                argument: Argument value
+                Argument: Argument value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -1714,7 +1619,7 @@ paths:
               author: Schedule author
               owner: Schedule owner
               arguments:
-                argument: Argument value
+                Argument: Argument value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -1745,7 +1650,7 @@ paths:
               author: Schedule author
               owner: Schedule owner
               arguments:
-                argument: Argument value
+                Argument: Argument value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -1776,7 +1681,7 @@ paths:
               author: Schedule author
               owner: Schedule owner
               arguments:
-                argument: Argument value
+                Argument: Argument value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -1811,7 +1716,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -1842,7 +1747,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -1873,7 +1778,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -1928,7 +1833,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: Scope of the schedule to be deleted
           type: string
         style: simple
       - description: Code of the schedule to be deleted
@@ -1937,12 +1841,11 @@ paths:
         name: code
         required: true
         schema:
-          description: Code of the schedule to be deleted
           type: string
         style: simple
       responses:
         "204":
-          description: Success
+          description: No Content
         "400":
           content:
             text/plain:
@@ -1977,7 +1880,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: The scope of Schedule
           type: string
         style: simple
       - description: The code of the Schedule
@@ -1986,7 +1888,6 @@ paths:
         name: code
         required: true
         schema:
-          description: The code of the Schedule
           type: string
         style: simple
       responses:
@@ -2005,7 +1906,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2036,7 +1937,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2067,7 +1968,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2120,7 +2021,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: Scope of the schedule to be updated
           type: string
         style: simple
       - description: Code of the schedule to be updated
@@ -2129,7 +2029,6 @@ paths:
         name: code
         required: true
         schema:
-          description: Code of the schedule to be updated
           type: string
         style: simple
       requestBody:
@@ -2144,7 +2043,7 @@ paths:
               author: Updated author
               owner: Updated owner
               arguments:
-                updatedArgument: Updated value
+                UpdatedArgument: Updated value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -2172,7 +2071,7 @@ paths:
               author: Updated author
               owner: Updated owner
               arguments:
-                updatedArgument: Updated value
+                UpdatedArgument: Updated value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -2200,7 +2099,7 @@ paths:
               author: Updated author
               owner: Updated owner
               arguments:
-                updatedArgument: Updated value
+                UpdatedArgument: Updated value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -2228,7 +2127,7 @@ paths:
               author: Updated author
               owner: Updated owner
               arguments:
-                updatedArgument: Updated value
+                UpdatedArgument: Updated value
               trigger:
                 timeTrigger:
                   expression: 0 0 5 ? * 3
@@ -2264,7 +2163,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2295,7 +2194,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2326,7 +2225,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2381,7 +2280,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: The schedule scope
           type: string
         style: simple
       - description: The schedule cde
@@ -2390,7 +2288,6 @@ paths:
         name: code
         required: true
         schema:
-          description: The schedule cde
           type: string
         style: simple
       responses:
@@ -2435,7 +2332,7 @@ paths:
                 result: Example result
               schema:
                 $ref: '#/components/schemas/StartScheduleResponse'
-          description: Success
+          description: Accepted
         "400":
           content:
             text/plain:
@@ -2471,7 +2368,6 @@ paths:
         name: scope
         required: true
         schema:
-          description: Scope of the schedule to be enabled/disabled
           type: string
         style: simple
       - description: Code of the schedule to be enabled/disabled
@@ -2480,7 +2376,6 @@ paths:
         name: code
         required: true
         schema:
-          description: Code of the schedule to be enabled/disabled
           type: string
         style: simple
       - description: Specify whether to enable or disable the schedule
@@ -2489,7 +2384,6 @@ paths:
         name: enable
         required: true
         schema:
-          description: Specify whether to enable or disable the schedule
           type: boolean
         style: form
       responses:
@@ -2508,7 +2402,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2539,7 +2433,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2570,7 +2464,7 @@ paths:
                 author: Schedule author
                 owner: Schedule owner
                 arguments:
-                  argument: Argument value
+                  Argument: Argument value
                 trigger:
                   timeTrigger:
                     expression: 0 0 5 ? * 3
@@ -2658,6 +2552,7 @@ components:
           relation: relation
       properties:
         description:
+          minLength: 1
           type: string
         action:
           $ref: '#/components/schemas/ActionId'
@@ -2802,6 +2697,7 @@ components:
           nullable: true
           type: string
         description:
+          minLength: 1
           type: string
         actions:
           items:
@@ -2859,6 +2755,7 @@ components:
       properties:
         dataType:
           description: Data type of the argument
+          minLength: 1
           type: string
         required:
           description: Optionality of the argument
@@ -2879,6 +2776,7 @@ components:
         passedAs:
           description: "Specifies how this argument should be passed in\r\nAllowed\
             \ values are: CommandLine or EnvironmentVariable\r\n\r\nDefaults to: CommandLine"
+          minLength: 1
           type: string
         defaultValue:
           description: "Specify a default value for this argument if no value is provided\r\
@@ -2958,6 +2856,7 @@ components:
           type: string
         imageName:
           description: The name of the Docker image that contains this job
+          minLength: 1
           type: string
         imageTag:
           description: The tag of the Docker image that contains this job
@@ -3081,6 +2980,7 @@ components:
           type: string
         arguments:
           additionalProperties:
+            nullable: true
             type: string
           description: All arguments specified by this Schedule that will be passed
             in to the Job
@@ -3126,10 +3026,13 @@ components:
           format: int32
           type: integer
         name:
+          minLength: 1
           type: string
         displayName:
+          minLength: 1
           type: string
         description:
+          minLength: 1
           type: string
         required:
           type: boolean
@@ -3168,7 +3071,7 @@ components:
         actions:
           items:
             $ref: '#/components/schemas/ActionId'
-          minLength: 1
+          minItems: 1
           type: array
         name:
           maxLength: 100
@@ -3683,9 +3586,10 @@ components:
       - relation
       type: object
     LusidProblemDetails:
-      additionalProperties: false
+      additionalProperties: {}
       properties:
         name:
+          minLength: 1
           type: string
         errorDetails:
           items:
@@ -3713,21 +3617,15 @@ components:
         instance:
           nullable: true
           type: string
-        extensions:
-          additionalProperties:
-            additionalProperties: false
-            type: object
-          nullable: true
-          readOnly: true
-          type: object
       required:
       - code
       - name
       type: object
     LusidValidationProblemDetails:
-      additionalProperties: false
+      additionalProperties: {}
       properties:
         name:
+          minLength: 1
           type: string
         errorDetails:
           items:
@@ -3762,13 +3660,6 @@ components:
         instance:
           nullable: true
           type: string
-        extensions:
-          additionalProperties:
-            additionalProperties: false
-            type: object
-          nullable: true
-          readOnly: true
-          type: object
       required:
       - code
       - name
@@ -4826,6 +4717,7 @@ components:
           type: string
         arguments:
           additionalProperties:
+            nullable: true
             type: string
           description: All arguments specified by this Schedule that will be passed
             in to the Job
@@ -4865,6 +4757,7 @@ components:
       properties:
         arguments:
           additionalProperties:
+            nullable: true
             type: string
           description: All arguments needed for the Job to run
           nullable: true
@@ -5052,6 +4945,7 @@ components:
           type: string
         imageName:
           description: The name of the Docker image that contains this job
+          minLength: 1
           type: string
         imageTag:
           description: The tag of the Docker image that contains this job
@@ -5169,6 +5063,7 @@ components:
           type: string
         arguments:
           additionalProperties:
+            nullable: true
             type: string
           description: "Updated arguments to be passed to the job\r\nNote: The new\
             \ arguments will completely replace old arguments"
@@ -5203,12 +5098,16 @@ components:
         buildVersionedDockerImageCommand: buildVersionedDockerImageCommand
       properties:
         dockerLoginCommand:
+          minLength: 1
           type: string
         buildVersionedDockerImageCommand:
+          minLength: 1
           type: string
         tagVersionedDockerImageCommand:
+          minLength: 1
           type: string
         pushVersionedDockerImageCommand:
+          minLength: 1
           type: string
         tagLatestDockerImageCommand:
           nullable: true
