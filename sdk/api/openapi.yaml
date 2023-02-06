@@ -6,7 +6,7 @@ info:
     url: https://www.finbourne.com
   termsOfService: https://www.finbourne.com/legal/terms-conditions
   title: FINBOURNE Scheduler API
-  version: 0.0.755
+  version: 0.0.756
   x-logo:
     url: https://www.lusid.com/app/assets/logo_white.png
     backgroundColor: '#415464'
@@ -3586,7 +3586,7 @@ components:
       - relation
       type: object
     LusidProblemDetails:
-      additionalProperties: {}
+      additionalProperties: false
       properties:
         name:
           minLength: 1
@@ -3622,7 +3622,7 @@ components:
       - name
       type: object
     LusidValidationProblemDetails:
-      additionalProperties: {}
+      additionalProperties: false
       properties:
         name:
           minLength: 1
